@@ -40,7 +40,7 @@ public class User {
     @NotAudited
     private int age;
     
-  // 注释可以在戈塔特人方法上，也可以在字段上，都有效
+  // 注释可以在gettter方法上，也可以在字段上，都有效
   	@Temporal(TemporalType.TIMESTAMP)
   	@Column(name = "REG_DATE")
     private Date regDate;
