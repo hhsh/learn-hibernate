@@ -29,9 +29,9 @@
         <property name="hbm2ddl.auto">create</property> -->
 
         <!-- Names the annotated entity class -->
-        <mapping class="com.test.User"/>
+        <mapping class="com.hajea.mapping.User"/>
         
-        <mapping class="com.test.Address"/>
+        <mapping class="com.hajea.mapping.Address"/>
 
     </session-factory>
 
