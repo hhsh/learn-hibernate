@@ -152,10 +152,10 @@ public class Test {
 		
 //				manulDelete(1l);
 //		manulUpdae(1l);
-//		resetDB();
+		resetDB();
 //		manulUpdae(2L);
 		
-		revertDelete(1l);
+//		revertDelete(1l);
 		
 		//Address add1 = new Address(4l,user);
 		//user.setUserName("黄华山23");
