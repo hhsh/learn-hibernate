@@ -145,7 +145,7 @@ public class Test {
 	
 	public static void resetDB(){
 		deleteAll2(); 
-		addAll() ; 
+		addAll() ;  
 	}
 	
 	public static void main(String[] args) {
