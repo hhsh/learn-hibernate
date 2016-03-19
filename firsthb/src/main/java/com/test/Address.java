@@ -18,7 +18,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.envers.Audited;
 import org.hibernate.envers.NotAudited;
 
-@Audited
+//@Audited
 @Entity
 @Table( name = "ADDRESS" )
 public class Address {
@@ -28,7 +28,7 @@ public class Address {
 	@GenericGenerator(name="myInc", strategy = "increment")
     private Long id;
 	
-	@ManyToOne(fetch=FetchType.LAZY,cascade=CascadeType.ALL)
+	@ManyToOne(cascade=CascadeType.PERSIST,fetch=FetchType.LAZY)
 	@JoinColumn(name="USER_ID")
 	private User user;
     
@@ -39,6 +39,7 @@ public class Address {
     /*
      * http://stackoverflow.com/questions/4496548/hibernate-insert-cascade-not-inserting-foreign-key
      */
+    
     public Address(User user,String city,String street){
     	this.user = user;
     	this.city = city;
@@ -46,6 +47,11 @@ public class Address {
     }
     public Address(){
     	
+    }
+    
+    public Address(Long id,User user){
+    	this.id = id;
+    	this.user = user;
     }
 	public Long getId() {
 		return id;
@@ -78,7 +84,8 @@ public class Address {
 	public void setStreet(String street) {
 		this.street = street;
 	}
-    
+	 
+	
     
     
 

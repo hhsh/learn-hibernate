@@ -52,11 +52,9 @@ public class User {
   	 */
   	//mappedBy="user" 为Address中user属性
   	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.LAZY,
-  			mappedBy="user",orphanRemoval=true,
-  			targetEntity = Address.class
-  			)
+  			mappedBy="user"  )
   	//@JoinColumn(name="USER_ID") 
-    private Set  adresses = new HashSet (0);
+    private Set<Address>adresses = new HashSet<Address>(0);
     
    
 
