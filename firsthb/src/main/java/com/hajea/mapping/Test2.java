@@ -19,6 +19,9 @@ public class Test2 {
 		entityManager.persist( u1 );
 		entityManager.persist( u2 );
 		entityManager.getTransaction().commit();
+		
+		
+		entityManagerFactory.close();
 	}
 
 }
