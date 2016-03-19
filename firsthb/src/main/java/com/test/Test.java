@@ -131,6 +131,17 @@ public class Test {
 		session.update(user);//这句可以有，也可以无
 		session.getTransaction().commit();
 	}
+	//反向删除，即删除依附记录
+	public static void revertDelete(Long addrId) {
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		
+		Address ad = new Address();
+		ad.setId(addrId);
+		session.delete(ad);
+		
+		session.getTransaction().commit();
+	}
 	
 	public static void resetDB(){
 		deleteAll2(); 
@@ -141,8 +152,10 @@ public class Test {
 		
 //				manulDelete(1l);
 //		manulUpdae(1l);
-		resetDB();
+//		resetDB();
 //		manulUpdae(2L);
+		
+		revertDelete(1l);
 		
 		//Address add1 = new Address(4l,user);
 		//user.setUserName("黄华山23");
